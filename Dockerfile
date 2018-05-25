@@ -23,6 +23,13 @@ RUN apk add -t python && \
   curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl && \
   chmod a+rx /usr/local/bin/youtube-dl
 
+HEALTHCHECK \
+  --interval=30s \
+  --timeout=5s \
+  --retries=3 \
+  --start-period=1m \
+CMD curl -f localhost || exit 1
+
 VOLUME /var/log/aria2c /var/local/aria2c
 
 COPY wrapper_script.sh /usr/local/bin/wrapper_script.sh

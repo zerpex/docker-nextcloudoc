@@ -32,5 +32,5 @@ CMD curl -f localhost || exit 1
 
 VOLUME /var/log/aria2c /var/local/aria2c
 
-COPY wrapper_script.sh /usr/local/bin/wrapper_script.sh
-CMD /usr/local/bin/wrapper_script.sh
+COPY wrapper_script.sh /wrapper_script.sh
+CMD /bin/sh /wrapper_script.sh

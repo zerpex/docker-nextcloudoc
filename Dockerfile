@@ -1,4 +1,4 @@
-FROM hoellen/nextcloud:18.0
+FROM hoellen/nextcloud:latest
 
 RUN addgroup -g $GID -S cloud && \
     adduser -u $UID -S cloud -G cloud
